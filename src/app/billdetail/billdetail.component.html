@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="table-responsive"></div>
+    <h3>HÓA ĐƠN TỔNG</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tên</th>
+                <th>Tiền Chi</th>
+                <th>Tiền Thu</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let total of totals">
+                <td>{{total.name}}</td>
+                <td><input type="number" [(ngModel)]="total.expenseAmount" style="width: 100%;" disabled /></td>
+                <!-- Thay thế ô tiền chi -->
+                <td>
+                    <input type="number" [(ngModel)]="total.incomeAmount" style="width: 100%;" disabled />
+                </td> <!-- Thay thế ô tiền thu -->
+            </tr>
+        </tbody>
+        <tfoot> <!-- Thêm phần footer -->
+            <tr>
+            </tr>
+
+        </tfoot>
+    </table>
+</div>
+<div class="container">
+    <div *ngFor="let bill of bills">
+        <button type="button" class="btn btn-light" data-toggle="collapse" [attr.data-target]="'#demo' + bill.id">
+             <b>HÓA ĐƠN {{bill.id}} :</b> <b class="red-text">Tổng {{bill.totalMoney}} / {{bill.totalPeople}} = {{totaTienTrenNguoi(bill)}}</b><b class="color-changing"><i class="fa fa-search  "></i></b>
+        </button>
+        <table id="demo{{bill.id}}" class="table collapse">
+            <thead>
+                <tr>
+                    <th>Tên</th>
+                    <th>Tiền Chi</th>
+                    <th>Tiền Thu</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let billDetail of filterBillDetails(bill.id)">
+                    <td>{{billDetail.name}}</td>
+                    <td><input type="number" [(ngModel)]="billDetail.expenseAmount" style="width: 100%;" disabled />
+                    </td> <!-- Thay thế ô tiền chi -->
+                    <td>
+                        <input type="number" [(ngModel)]="billDetail.incomeAmount" style="width: 100%;" disabled />
+                    </td> <!-- Thay thế ô tiền thu -->
+
+                </tr>
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                        <button type="button" class="btn btn-primary" (click)="thanhToan(bill)">Thanh Toán</button>
+                    </td>
+                </tr>
+            </tfoot>
+
+        </table>
+    </div>
+</div>

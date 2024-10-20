@@ -1,0 +1,9 @@
+.btn-light {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    text-align: center;     /* Ensure text is centered */
+    width: 100%;            /* Ensure the button takes full width if needed */
+    padding: 10px;          /* Adjust padding for better alignment */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+}

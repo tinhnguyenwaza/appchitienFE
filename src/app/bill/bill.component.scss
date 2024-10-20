@@ -1,0 +1,89 @@
+input[type="number"] {
+    width: auto; /* Hoặc sử dụng width: 100%; nếu bạn muốn chúng chiếm toàn bộ chiều rộng */
+    min-width: 50px; /* Đặt chiều rộng tối thiểu nếu cần */
+    border: none; /* Xóa bỏ viền ngoài */
+    outline: none; /* Xóa bỏ viền khi được chọn */
+    background: transparent; /* Đặt nền trong suốt nếu cần */
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 800px; /* Set a max width for the container */
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse; /* Remove space between borders */
+}
+
+.table th, .table td {
+    text-align: center; /* Center align text in table cells */
+    padding: 10px; /* Add padding for better spacing */
+    border: 1px solid #ddd; /* Add border to table cells */
+}
+
+.table th {
+    background-color: #f2f2f2; /* Light gray background for header */
+}
+
+.table tfoot {
+    font-weight: bold; /* Make footer text bold */
+}
+
+button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make button inline */
+    margin: 10px 0; /* Add margin */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+h3 {
+    text-align: center; /* Center align the text */
+    font-size: 24px; /* Set a larger font size */
+    font-weight: bold; /* Make the text bold */
+    color: #333; /* Set a dark gray color for the text */
+    margin: 20px 0; /* Add margin above and below the heading */
+}
+
+.icon-delete {
+    cursor: pointer; /* Change cursor to pointer on hover */
+    color: #bdb9b9;  /* Set a red color for the icon */
+    font-size: 20px; /* Adjust the size of the icon */
+    display: inline-block; /* Ensure it behaves like an inline element */
+}
+
+.icon-delete:hover {
+    color: #611818; /* Darker red on hover */
+}
+
+.btn-custom {
+    background-color: #007bff; /* Primary color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Padding for size */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Inline block for spacing */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin for spacing */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.btn-custom:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+  .error-message {
+    color: red;
+  }

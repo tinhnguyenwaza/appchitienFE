@@ -1,0 +1,60 @@
+<div class="container">        
+    <div class="table-responsive">
+        <h3>HÓA ĐƠN {{maxBillId}}</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Tên</th>
+              <th>Tiền Chi</th>
+              <th>Tiền Thu</th>
+              <th>Xóa</th>              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let member of members">
+              <td>{{member.name}}</td>
+              <td><input type="number" [(ngModel)]="member.expense" style="width: 100%;" /></td> <!-- Thay thế ô tiền chi -->
+              <td>
+                <input type="number" [(ngModel)]="member.income" style="width: 100%;" disabled />
+              </td> <!-- Thay thế ô tiền thu -->
+              <td>
+                <span (click)="deleteMember(member.id ?? 0)" class="icon-delete">
+                  <i class="fa fa-times"></i> <!-- Nút xóa -->
+                </span>
+              </td>
+                 
+            </tr>          
+          </tbody>
+          <tfoot> <!-- Thêm phần footer -->
+            <tr>
+              <td colspan="4">Tổng : {{ getTotalExpense() }} / {{members.length}} = {{getTienTrenNguoi()}} VNĐ /Người</td> <!-- Sử dụng phương thức để tính tổng -->
+                
+            </tr>
+            <tr>
+              <td colspan="4">
+                <button class="btn-custom" (click)="calculateIncome()">Tính Tiền Thu</button> <!-- Nút để tính tiền thu -->
+              </td>
+              
+            </tr>
+            <tr>
+              <td colspan="4">
+                <span *ngIf="checkERR" class="error-message">Vui lòng nhập Tiền Chi</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="4">
+                <button class="btn-custom" (click)="saveBillDetail()" *ngIf="checkDisableButtonSave">Lưu</button> <!-- Nút để lưu -->
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4">
+                <span *ngIf="checkSaveSeccess" class="error-message">Lưu Thành Công</span>
+              </td>
+            </tr>
+            
+          </tfoot> 
+        </table>
+    </div>
+   
+</div>

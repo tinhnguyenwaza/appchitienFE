@@ -1,0 +1,37 @@
+.container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1a1a2e; /* Darker base color for the menu */
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+
+  .nav-link {
+    color: #e0e0e0; /* Light grey text for readability */
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    background-color: #16213e; /* Slightly lighter on hover */
+    color: #ffffff; /* White text on hover */
+  }
+
+  .nav-link:active {
+    background-color: #0f3460; /* Active state color */
+  }
+
+  .nav-link:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3); /* Focus ring for accessibility */
+  }
