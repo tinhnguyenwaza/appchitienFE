@@ -15,7 +15,8 @@ export interface User {
   providedIn: 'root',
 })
 export default class UserService {
-  private apiUrl = 'http://localhost:8088/api/v1/common'; // Địa chỉ API
+  //private apiUrl = 'http://localhost:8088/api/v1/common'; // Địa chỉ API
+  private apiUrl = 'https://appchiatienbe-production.up.railway.app/api/v1/common'; // Địa chỉ API
 
   constructor(private http: HttpClient) {}
 
