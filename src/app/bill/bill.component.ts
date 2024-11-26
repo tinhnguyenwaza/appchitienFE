@@ -41,7 +41,7 @@ export class BillComponent {
 
   getTienTrenNguoi() {
 
-    return this.getTotalExpense() / this.members.length;
+    return Math.floor(this.getTotalExpense() / this.members.length);
   }
 
   getThu(expense: number) {
@@ -50,7 +50,7 @@ export class BillComponent {
 
   calculateIncome() {
     this.members.forEach(member => {
-      member.income = this.getThu(member.expense || 0); // Sử dụng 0 nếu expense không có
+      member.income = Math.floor(this.getThu(member.expense || 0)); // Sử dụng 0 nếu expense không có
     });
 
     if (this.getTotalExpense() > 0) {

@@ -50,7 +50,7 @@ export class BilldetailComponent {
   totaTienTrenNguoi(bili: Bill | undefined) {
     // Check if bili is defined and has totalMoney and totalPeople
     if (bili && bili.totalMoney !== undefined && bili.totalPeople !== undefined) {
-      return bili.totalMoney / bili.totalPeople;
+      return Math.floor(bili.totalMoney / bili.totalPeople);
     }
     return 0; // Return 0 or any default value if bili is undefined
   }
