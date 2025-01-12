@@ -82,7 +82,8 @@ export class BillComponent {
       expenseAmount: member.expense || 0,
       incomeAmount: member.income || 0,
       name: member.name,
-      idBill: this.maxBillId
+      idBill: this.maxBillId,
+      totalAmountToPerson: this. getTienTrenNguoi()
     }));
 
     this.userService.saveBillDetail(this.billDetails).subscribe(() => {

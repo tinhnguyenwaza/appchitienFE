@@ -6,7 +6,9 @@
             <tr>
                 <th>Tên</th>
                 <th>Tiền Chi</th>
+                <th>Tổng Tiền nhậu</th>
                 <th>Tiền Thu</th>
+                <th>Số lần tham gia</th>
             </tr>
         </thead>
         <tbody>
@@ -14,9 +16,11 @@
                 <td>{{total.name}}</td>
                 <td><input type="number" [(ngModel)]="total.expenseAmount" style="width: 100%;" disabled /></td>
                 <!-- Thay thế ô tiền chi -->
+                <td>{{total.totalAmountToPerson}}</td>
                 <td>
                     <input type="number" [(ngModel)]="total.incomeAmount" style="width: 100%;" disabled />
                 </td> <!-- Thay thế ô tiền thu -->
+                <td>{{total.countTimeforPerson}}</td>
             </tr>
         </tbody>
         <tfoot> <!-- Thêm phần footer -->
@@ -36,8 +40,7 @@
                 <tr>
                     <th>Tên</th>
                     <th>Tiền Chi</th>
-                    <th>Tiền Thu</th>
-
+                    <th>Tiền Thu</th>                 
                 </tr>
             </thead>
             <tbody>

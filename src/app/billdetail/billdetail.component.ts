@@ -14,7 +14,13 @@ export class BilldetailComponent {
   bills: Bill[] = [];
   showDetails = true;
   members: Member[] = [];
-  totals: { name: string, expenseAmount: number, incomeAmount: number }[] = [];
+  totals: { 
+    name: string, 
+    expenseAmount: number, 
+    incomeAmount: number,
+    countTimeforPerson:number,
+    totalAmountToPerson:number
+   }[] = [];
 
   constructor(private userService: UserService, private Router: Router) { }
 
@@ -69,19 +75,29 @@ export class BilldetailComponent {
     this.totals = uniqueNameList.map(name => {
       let expenseAmount = 0;
       let incomeAmount = 0;
+      let countTimeforPerson = 0;
+      let totalAmountToPerson = 0;
+     
+     
 
       this.billDetails.forEach(detail => {
         if (detail.name === name) {
           expenseAmount += detail.expenseAmount || 0;
           incomeAmount += detail.incomeAmount || 0;
+          totalAmountToPerson += detail.totalAmountToPerson;
+          countTimeforPerson++;
         }
+        
+
       });
 
-      return { name, expenseAmount, incomeAmount };
+      return { name, expenseAmount, incomeAmount ,countTimeforPerson,totalAmountToPerson};
     });
-
+ 
+   
     console.log(this.totals);
   }
+
 
   thanhToan(bill : Bill) {
     bill.status = 'N';
